@@ -2,10 +2,15 @@ package musicLibrary;
 
 //import Track;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.*;
 import java.rmi.RemoteException;
 import java.util.*;
 
+
+@XmlRootElement(name = "trackList")
 public class TrackList implements Serializable {
     //  + инкапсулировать приватный уникальный идентификатор согласно варианту
     //  + инкапсулировать приватный массив элементов согласно варианту;
@@ -39,6 +44,8 @@ public class TrackList implements Serializable {
         this.ID = ID;
     }
 
+    @XmlElementWrapper(name = "tracks")
+    @XmlElement(name = "track")
     public void setTracks(ArrayList<Track> tracks) {
         this.tracks = tracks;
     }

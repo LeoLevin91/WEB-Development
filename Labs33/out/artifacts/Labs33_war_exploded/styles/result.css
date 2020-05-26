@@ -68,7 +68,8 @@ header h1 {
 }
 
 a:hover {
-    color: #2bfc26;
+    /*color: #2bfc26;*/
+    color: red;
     border-bottom: 1px solid white;
     transition: 1s;
 }
@@ -79,4 +80,6 @@ table {
     width: 900px;
 }
 
-
+.data_table {
+    text-align: center;
+}

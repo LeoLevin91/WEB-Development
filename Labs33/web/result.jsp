@@ -7,12 +7,9 @@
 <%
     User user = (User) request.getSession().getAttribute("user");
     if (user == null) {
-        response.setHeader("Error", "5;url=index.jsp");
+        response.setHeader("Error", "1;url=index.jsp");
     }
 %>
-
-
-
 
 
 <!DOCTYPE html>

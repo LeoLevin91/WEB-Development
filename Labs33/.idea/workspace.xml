@@ -40,10 +40,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -53,25 +56,28 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1cMg8CGnO6y6s6lSholBMcUQ9hm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/database" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2514706" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Leonard\IdeaProjects\Labs33\web" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Leonard\IdeaProjects\Labs33\src\main\java\database" />
+      <recent name="C:\Users\Leonard\IdeaProjects\Labs33\src\main\java\musicLibrary" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Leonard\IdeaProjects\Labs33\src\main\java\database" />
-      <recent name="C:\Users\Leonard\IdeaProjects\Labs33\src\main\java\musicLibrary" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Leonard\IdeaProjects\Labs33\web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -192,6 +198,9 @@
       <workItem from="1590415489708" duration="2870000" />
       <workItem from="1590418534335" duration="396000" />
       <workItem from="1590418991459" duration="5587000" />
+      <workItem from="1590425004831" duration="711000" />
+      <workItem from="1590484211773" duration="595000" />
+      <workItem from="1590484870162" duration="7040000" />
     </task>
     <servers />
   </component>

@@ -2,9 +2,13 @@ package musicLibrary;
 
 // Импортируем необходимые библиотеки
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import java.io.*;
 
 
+@XmlRootElement(name = "track")
 public class Track implements Serializable, Comparable<Track> {
     /* + инкапсулировать приватные поля согласно варианту;
        + иметь конструктор с параметрами, проверяющий корректность значени
@@ -20,6 +24,8 @@ public class Track implements Serializable, Comparable<Track> {
     private double size;
     // Длительность трека
     private long duration;
+
+    public Track(){}
 
     public Track(String title, double size, long duration){
         // Конструктор с проверкой значений
@@ -42,7 +48,7 @@ public class Track implements Serializable, Comparable<Track> {
     public String getTitle() {
         return title;
     }
-
+    @XmlElement(name="size")
     public Double getSize(){
         return size;
     }
@@ -51,15 +57,13 @@ public class Track implements Serializable, Comparable<Track> {
         return duration;
     }
     // Методы для изменения полей объекта
-
     public void setTitle(String title) {
         this.title = title;
     }
 
-    public void setSize(double size) {
-        // Проверка на размер
-        this.size = size;
 
+    public void setSize(double size) {
+        this.size = size;
     }
 
     public void setDuration(long duration) {

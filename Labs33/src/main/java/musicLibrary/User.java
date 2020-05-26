@@ -1,8 +1,14 @@
 package musicLibrary;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import java.io.*;
 import java.util.ArrayList;
 
+
+@XmlRootElement
 public class User implements Serializable{
     // Экземпляры класса User. Класс User сериализуемый
     private int id;
@@ -57,6 +63,7 @@ public class User implements Serializable{
         return password;
     }
 
+    @XmlTransient
     public void setPassword(String password) {
         this.password = password;
     }
@@ -66,6 +73,8 @@ public class User implements Serializable{
         return trackLists;
     }
 
+    @XmlElementWrapper(name = "trackLists")
+    @XmlElement(name = "trackList")
     public void setTrackLists(ArrayList<TrackList> trackLists){
         this.trackLists = trackLists;
     }
