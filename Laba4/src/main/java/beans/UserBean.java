@@ -6,6 +6,7 @@ import musicLibrary.Track;
 import musicLibrary.TrackList;
 import musicLibrary.User;
 
+import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -14,63 +15,64 @@ import java.lang.reflect.Array;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-@ManagedBean(name = "userBean")
+@ManagedBean
 @SessionScoped
 public class UserBean {
+    private final String MESSAGE_USER_NOT_FOUND = "notfound";
+    private final String MESSAGE_USER_IS_FOUND = "found";
+    private final String MESSAGE_SQL_ERROR = "sqlerror";
+
+    @EJB
+    private final UserEJB userEJB;
     private User user;
-    private UserEJB userEJB;
-    private Track track;
-    private TrackList trackList;
-    private DataSource dataSource;
+    private String login;
+    private String password;
+    private String message = "User";
 
-    public User getUser() {
-        return user;
+    public String getLogin() {
+        return login;
     }
 
-    public void setUser(User user){
-        this.user = user;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    public UserEJB getUserEJB() {
-        return userEJB;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUserEJB(UserEJB userEJB) {
-        this.userEJB = userEJB;
+    public void setPassword(String password) {
+        this.password = password;
     }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+
 
     public UserBean(){
-        user = new User();
-        userEJB = new UserEJB();
-        track = new Track();
+        this.userEJB = new UserEJB();
     }
 
-    public Track getTrack() {
-        return track;
-    }
+    public String validateUserLogin() {
+        try {
+            user = userEJB.validateUserLogin(login, password);
 
-    public void setTrack(Track track) {
-        this.track = track;
-    }
-
-    // Делегация управления
-    public String goToResultPage(){
-        User userFromDataSource = userEJB.validateUserLogin(user.getLogin(), user.getPassword());
-        if(userFromDataSource != null){
-            this.user = userFromDataSource;
-            return "result";
-        } else {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Такого пользователя не существует!"));
-            return "index";
+            if (user == null) {
+                return message = MESSAGE_USER_NOT_FOUND;
+            }
+            else {
+                return message = MESSAGE_USER_IS_FOUND;
+            }
+        } catch (SQLException | ClassNotFoundException throwables) {
+            throwables.printStackTrace();
+            return message = MESSAGE_SQL_ERROR;
         }
-    }
-
-    public String seeXmlView(){
-        return this.goToResultPage().equals("index") ? "index" : "resultXML";
-    }
-
-    public ArrayList<TrackList> getUserTrackLists() throws SQLException, ClassNotFoundException {
-        return dataSource.findTrackListByUser(user);
     }
 
 }
