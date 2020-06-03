@@ -29,15 +29,28 @@ public class UserBean {
     private final String MESSAGE_USER_IS_FOUND = "found";
     private final String MESSAGE_SQL_ERROR = "sqlerror";
 
+    private final String LBL_LOGIN = "ВХОД";
+    private final String LBL_NOTFOUND = "ПОЛЬЗОВАТЕЛЬ НЕ НАЙДЕН";
+
     @EJB
     private final UserEJB userEJB;
     private User user;
     private String login;
     private String password;
-    private String message = "User";
+    private String message;
+    private String topLabel = LBL_LOGIN;
+
 
     public UserBean(){
         this.userEJB = new UserEJB();
+    }
+
+    public String getTopLabel() {
+        return topLabel;
+    }
+
+    public void setTopLabel(String topLabel) {
+        this.topLabel = topLabel;
     }
 
     public String getLogin() {
@@ -77,9 +90,11 @@ public class UserBean {
             user = userEJB.validateUserLogin(login, password);
 
             if (user == null) {
+                topLabel = LBL_NOTFOUND;
                 return message = MESSAGE_USER_NOT_FOUND;
             }
             else {
+                topLabel = LBL_LOGIN;
                 return message = MESSAGE_USER_IS_FOUND;
             }
         } catch (SQLException | ClassNotFoundException throwables) {

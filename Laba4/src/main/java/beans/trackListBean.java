@@ -69,7 +69,7 @@ public class trackListBean {
         try {
             toValidate = o.toString();
             if (toValidate.equals("")) {
-                FacesMessage facesMessage = new FacesMessage("Имя должно быть непустым.");
+                FacesMessage facesMessage = new FacesMessage("Название должно быть непустым.");
                 throw new ValidatorException(facesMessage);
             }
         } catch (ValidatorException e) {
@@ -81,7 +81,7 @@ public class trackListBean {
         long toValidate;
         toValidate = Integer.parseInt(o.toString());
         if (toValidate <= 0) {
-            FacesMessage facesMessage = new FacesMessage("Число должно быть положительным.");
+            FacesMessage facesMessage = new FacesMessage("Число должно быть положительным и не равно нулю");
             throw new ValidatorException(facesMessage);
         }
     }
@@ -108,7 +108,5 @@ public class trackListBean {
         }
         return "success";
     }
-
-
 
 }

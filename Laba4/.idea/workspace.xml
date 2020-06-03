@@ -23,7 +23,7 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/web/result.xhtml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/resources/result.xhtml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -36,10 +36,19 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/Laba4_war_exploded/resources/styles" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Leonard\IdeaProjects\Laba4\out\artifacts\Laba4_war_exploded\resources\styles" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Leonard\IdeaProjects\Laba4\web\resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -55,7 +64,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.352" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.352" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8888/Laba4_war_exploded/" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8888/Laba4_war_exploded/resources/index.xhtml" />
       <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -145,6 +154,7 @@
       <workItem from="1591015594562" duration="614000" />
       <workItem from="1591027601904" duration="5367000" />
       <workItem from="1591113790690" duration="10896000" />
+      <workItem from="1591214725248" duration="4048000" />
     </task>
     <servers />
   </component>

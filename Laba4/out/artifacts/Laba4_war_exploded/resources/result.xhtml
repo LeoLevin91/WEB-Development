@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: Leonard
+  Date: 02.06.2020
+  Time: 20:04
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:c="http://java.sun.com/jsp/jstl/core" xml:lang="ru" lang="ru"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>#{userBean.user.name}</title>
+    <link rel="stylesheet" href="styles/result.css"/>
+</h:head>
+<body>
+<c:if test="#{customerBean.reader == null}">
+    <f:metadata>
+        <f:viewAction action="error.xhtml"/>
+    </f:metadata>
+</c:if>
+<header>
+    <div class="container">
+        <div class="title">
+            <h1>Добро пожаловать, #{userBean.user.name} !</h1>
+        </div>
+    </div>
+</header>
+<div class="container conOne">
+    <h:form>
+        <h:commandLink value="Выйти" action="#{userBean.logOut}"/>
+    </h:form>
+    <h:form>
+        <h:commandLink value="Скачать XML" action="#{userBean.downloadXML}"/>
+    </h:form>
+</div>
+<div class="container conTwo">
+    <ui:repeat value="#{userBean.user.trackLists}" var="trackList">
+        <table>
+            <h:dataTable value="#{trackList.tracks}" var="track">
+                <f:facet name="header">#{trackList.ID}</f:facet>
+                <h:column>
+                    <f:facet name="header">Название</f:facet>
+                    #{track.title}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Длительность</f:facet>
+                    #{track.duration}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Размер</f:facet>
+                    #{track.size}
+                </h:column>
+
+                <h:column>
+                    <h:form>
+                        <h:commandButton value="Удалить трек" action="#{userBean.deleteTrack(track.title)}" styleClass="btn" style="background-color: transparent;
+                                                                                                                                    color: white;
+                                                                                                                                    border: 1px solid white;
+                                                                                                                                    padding: 5px 10px;">
+                        </h:commandButton>
+                    </h:form>
+                </h:column>
+            </h:dataTable>
+            <h:form>
+                <h:commandButton value="Добавить трек" action="#{trackListBean.insertTrack(trackList.ID)}" styleClass="btn" style="background-color: transparent;
+                                                                                                                                    color: white;
+                                                                                                                                    border: 1px solid white;
+                                                                                                                                    padding: 5px 10px;
+                                                                                                                                    margin-bottom: 15px">
+                </h:commandButton>
+            </h:form>
+        </table>
+    </ui:repeat>
+</div>
+</body>
+
+</html>
