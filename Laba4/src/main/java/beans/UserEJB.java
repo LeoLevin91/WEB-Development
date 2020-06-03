@@ -21,4 +21,9 @@ public class UserEJB {
         }
     }
 
+    public void deleteTrack(String trackTitle) throws SQLException, ClassNotFoundException {
+        DataSource dataSource = new DataSource();
+        dataSource.deleteTrack(trackTitle);
+    }
+
 }

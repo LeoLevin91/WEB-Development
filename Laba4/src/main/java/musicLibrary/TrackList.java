@@ -59,6 +59,10 @@ public class TrackList implements Serializable {
         return this.tracks.size();
     }
 
+    public String getStringId(){
+        return String.valueOf(ID);
+    }
+
 
 
     // Метод добавление объекта по индексу

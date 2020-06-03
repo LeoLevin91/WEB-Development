@@ -229,7 +229,22 @@ public class DataSource {
         tempUser.setTrackLists(trackLists);
         connection.close();
         return  tempUser;
+    }
 
+    public void insertTrack(Track track, int ID) throws SQLException, ClassNotFoundException {
+        Connection connection = getConnection();
+        PreparedStatement statement = connection.prepareStatement("insert into track(title, size, duration) values (?,?,?)");
+        PreparedStatement statement1 = connection.prepareStatement("insert into tracklist(id, track_title) values (?,?)");
+        statement.setString(1, track.getTitle());
+        statement.setDouble(2, track.getSize());
+        statement.setLong(3, track.getDuration());
+
+        statement1.setInt(1, ID);
+        statement1.setString(2, track.getTitle());
+
+        statement1.execute();
+        statement.execute();
+        connection.close();
     }
 
 

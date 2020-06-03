@@ -17,8 +17,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="facelets" />
+        <option value="CSS File" />
       </list>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/web/result.xhtml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -31,6 +36,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -137,7 +143,8 @@
       <workItem from="1590915613644" duration="1772000" />
       <workItem from="1590929558122" duration="6966000" />
       <workItem from="1591015594562" duration="614000" />
-      <workItem from="1591027601904" duration="4777000" />
+      <workItem from="1591027601904" duration="5367000" />
+      <workItem from="1591113790690" duration="10896000" />
     </task>
     <servers />
   </component>
