@@ -23,7 +23,7 @@
 
 
     <properties>
-        <primefaces-version>5.2.RC1</primefaces-version>
+        <primefaces-version>6.0</primefaces-version>
     </properties>
 
     <dependencies>
